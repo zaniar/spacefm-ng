@@ -1,14 +1,3 @@
-README for SpaceFM v1.0
-
-    Homepage       http://ignorantguru.github.io/spacefm/
-    Downloads      https://github.com/IgnorantGuru/spacefm/releases
-    News           http://ignorantguru.github.io/spacefm/news.html
-    Wiki           https://github.com/IgnorantGuru/spacefm/wiki
-    Screenshots    https://github.com/IgnorantGuru/spacefm/wiki/Screenshots
-    Users Manual   http://ignorantguru.github.io/spacefm/spacefm-manual-en.html
-    Forum          https://sourceforge.net/p/spacefm/discussion/general/
-    Report Issues  https://github.com/IgnorantGuru/spacefm/issues
-
 
 CONTENTS
 
@@ -30,6 +19,9 @@ CONTENTS
 
 
 DESCRIPTION
+
+    This is a derivative work from http://github.com/IgnorantGuru/spacefm/.
+    Due to low maintainer activity, this fork was created in order to keep Spacefm development going.
 
     SpaceFM is a multi-panel tabbed file and desktop manager for Linux with
     built-in VFS, udev- or HAL-based device manager, customisable menu system,
