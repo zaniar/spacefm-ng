@@ -1,14 +1,8 @@
 
 CONTENTS
-
     DESCRIPTION
-    PACKAGES
-    INSTALLER
-    DEPENDENCIES
-    DOWNLOAD
-    INSTALL
+    BUILDING THE SOURCE
     BUILD DEBUG
-    CREATE DEBIAN PACKAGE
     UNINSTALL
     USING GIT
     ENABLE KERNEL POLLING
@@ -28,174 +22,9 @@ DESCRIPTION
     and bash integration. SpaceFM aims to provide a stable, capable file
     manager with significant customisation capabilities.
 
-
-PACKAGES
-
-    SpaceFM is included in most distro repositories.  To find packages, forum
-    threads, and other info for your distro, see:
-        https://github.com/IgnorantGuru/spacefm/wiki/Distros
-
-    For other distros, or to build with custom options, see INSTALLER below.
-
-
-INSTALLER
-
-    The easiest way to download and build SpaceFM is to use the net installer,
-    which automates the instructions in this README. To download the installer:
-
-    wget https://raw.github.com/IgnorantGuru/spacefm/next/spacefm-installer
-    # OR using curl:
-    curl -L -o spacefm-installer \
-            https://raw.github.com/Teklad/spacefm-ng/master/spacefm-installer
-
-    To run the installer (MUST be run in a terminal):
-
-        bash spacefm-installer
-
-    Most users can press Enter to accept default values at both prompts.
-
-    The installer will display dependencies for your chosen build.  If
-    any dependencies are missing, examine the error, install missing packages,
-    and try again.  See DEPENDENCIES below for reference.
-
-    If you have already downloaded the source, the installer can be run from
-    within the source directory to automatically build and install:
-
-        ./spacefm-installer
-
-    When SpaceFM is installed, the installer is also installed to /usr/bin.
-    For automated options, run:  spacefm-installer --help
-
-    To reinstall or upgrade, just run the installer again.  For example, to
-    upgrade to the latest rolling release, just run:
-
-        spacefm-installer --version=next --prefix=/usr
-
-    To uninstall:   spacefm-installer --uninstall
-
-
-DEPENDENCIES
-
-    Install required build dependencies (below are Debian package names -
-    packages names on your distro may vary but should be similar):
-
-        autotools-dev bash build-essential intltool pkg-config fakeroot
-        shared-mime-info desktop-file-utils libc6 libcairo2 libglib2.0-0
-        libglib2.0-dev libpango1.0-0 libx11-6 libx11-6-dev libudev0 (>=143)
-        libudev-dev libffmpegthumbnailer-dev
-
-    Also, if using GTK2: libgtk2.0-0 (>=2.18) libgtk2.0-dev libgtk2.0-bin
-
-    OR, if using GTK3:   libgtk-3-0 libgtk-3-dev libgtk-3-bin
-
-    Also, if you want to use startup notification: libstartup-notification0-dev
-
-    If you want to use clone in Btrfs when copying (as in cp --reflink):
-    btrfs-tools (btrfs-progs on ArchLinux and maybe others), only for compiling
-    Linux kernel >= 3.10, only works on Btrfs filesystem
-
-    For optional dbus support: dbus libdbus-1-3 libdbus-1-dev
-
-    RECOMMENDED: udevil|pmount|udisks gksu|kdesu|ktsuss|lxqt-sudo eject lsof
-                 wget
-
-    For additional mounting support: fuseiso curlftpfs jmtpfs gphotofs ifuse
-
-    IMPORTANT: SpaceFM is highly integrated with bash and uses features of
-    bash v4.  Attempting to substitute another shell for bash WILL cause
-    feature breakage, even if not immediately apparent.  Use genuine bash.
-
-    configure will report anything missing when you run it as shown below.
-
-
-DOWNLOAD
-
-    SpaceFM is distributed via Github:
-        https://github.com/IgnorantGuru/spacefm/releases
-
-    First, make a temporary directory and enter it:
-
-        mkdir /tmp/spacefm-build
-        cd /tmp/spacefm-build
-
-    To download a branch, particular version, or under-development commit, use:
-
-    wget -O spacefm.tar.gz https://github.com/IgnorantGuru/spacefm/archive/next.tar.gz
-
-    The above example downloads the 'next' branch, which is SpaceFM's rolling
-    release.  You can also substitute 'master' (stable release), a version
-    number (eg '1.0.4'), or a commit (eg 1709b809) for 'next' in the above URL.
-
-    Then, extract the archive, and enter the source directory:
-
-        tar xzf spacefm.tar.gz && cd spacefm-*
-
-    ALTERNATIVELY, instead of downloading the tarball with wget above, you can
-    use git to clone the SpaceFM source repo, check signatures, and download
-    upgrades.  See the USING GIT section further below.
-
-
-INSTALL
-
-    Use these commands to build and install:
-
-        ./configure --prefix=/usr
-        make -s
-        sudo make install
-        sudo update-mime-database /usr/share/mime > /dev/null
-        sudo update-desktop-database -q
-        sudo gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor
-        sudo gtk-update-icon-cache -q -t -f /usr/share/icons/Faenza
-
-        # Remove Temporary Files
-        cd / && rm -rf /tmp/spacefm-build
-
-    If configure reports missing dependencies, install them and run configure
-    again before proceeding to make.
-
-    configure options for alternate builds:
-
-    --with-gtk3
-        By default, configure will use GTK2 if installed.  To force use of
-        GTK3, add --with-gtk3.
-
-        BE SURE to use a GTK3 theme which supports your CURRENT version of GTK3
-        (no theme warnings should appear when spacefm is run in a terminal),
-        or use Adwaita.
-
-        PACKAGERS: Due to other desktop components, some users may require or
-        prefer GTK2.  Please consider providing both spacefm-gtk2 and
-        spacefm-gtk3 packages for your users.
-
-    --disable-video-thumbnails
-        Remove support for video thumbnails.  Omit libffmpegthumbnailer.
-
-    --enable-hal
-        Use HAL instead of udev.  Device manager functions are extremely
-        limited.  Use of this build is only recommended if udev or eudev is not
-        available.  SpaceFM HAL support is no longer actively developed, yet
-        please report any build problems.
-        Instead of libudev0 and libudev-dev, install:
-            hal libhal-dev libhal-storage-dev libhal-storage1 libhal1
-            libdbus-glib-1-2 libdbus-glib-1-dev dbus libdbus-1-3 libdbus-1-dev
-
-    --sysconfdir=/etc
-        Set the correct location of /etc on your system for installing
-        /etc/spacefm/spacefm.conf.
-
-    For additional configure options, see:  ./configure --help
-
-    To run root commands, SpaceFM supports gksu, gksudo, gnomesu, kdesu,
-    kdesudo, ktsuss, lxqt-sudo, xdg-su, su-to-root, su, and sudo.  To configure
-    an additional terminal or graphical su program see
-    /etc/spacefm/spacefm.conf. Or, to build with an additional graphical su
-    program ('/usr/bin/mysu' in this example), add:
-        --with-preferable-sudo=/usr/bin/mysu
-
-    Note: When using older distros, enabling kernel polling may be required. If
-    you insert a CD and SpaceFM still says 'no media', please see the ENABLE
-    KERNEL POLLING section further below.
-
+BUILDING THE SOURCE
+Please refer to https://github.com/Teklad/spacefm-ng/wiki/building-the-source for instructions on obtaining
+and compiling the source.
 
 BUILD DEBUG
 
@@ -376,41 +205,6 @@ ENABLE KERNEL POLLING
     http://blogs.gentoo.org/mgorny/2011/06/20/uam-can-now-mount-cds-and-dvds/
     https://bugs.archlinux.org/task/25609
     http://unix.stackexchange.com/questions/38582/
-
-
-TRANSLATE
-
-    To help translate SpaceFM please visit:
-        https://github.com/IgnorantGuru/spacefm/wiki/Translate
-
-    At Transifex:
-        https://www.transifex.com/ignorantguru/spacefm/
-
-    Just sign up for a free Transifex account.  For instructions visit:
-        http://help.transifex.com/intro/translating.html#translating
-
-
-RELEASE
-
-    For developers:  The 'release' script in the SpaceFM source dir is used by
-    SpaceFM developers (or forks) to perform a release.
-
-    To use this script, complete changes to the next branch (they don't have to
-    be commited), then run: ./release
-
-    Note the manual workflow items listed by the script before proceeding.
-
-    The script will interactively perform a release of SpaceFM by increasing
-    the version number, preparing the source dir for distribution, commiting
-    the next branch, merging to master, signing the release tag, pushing
-    master, starting the next version, and pushing next.  You must have
-    permission to push to git's origin.  It also optionally pulls the wiki, and
-    pushes gh-pages, if present.
-
-    When the script is finished, master branch will contain the new release,
-    next branch will be prepared for the next version, and Github will show the
-    release tag in Releases.
-
 
 LICENSE
 
