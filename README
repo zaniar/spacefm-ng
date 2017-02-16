@@ -1,10 +1,3 @@
-
-CONTENTS
-    DESCRIPTION
-    BUILDING THE SOURCE
-    LICENSE
-
-
 DESCRIPTION
     SpaceFM-NG is a multi-panel tabbed file and desktop manager for Linux with
     built-in VFS, udev- or HAL-based device manager, customisable menu system,
