@@ -2,7 +2,6 @@
 CONTENTS
     DESCRIPTION
     BUILDING THE SOURCE
-    UNINSTALL
     LICENSE
 
 
@@ -23,40 +22,7 @@ DESCRIPTION
         https://github.com/Teklad/spacefm-ng/wiki/building-the-source
     * Bug Reporting:
         https://github.com/Teklad/spacefm-ng/wiki/Bug-Reporting
-
-
-
-
-BUILDING THE SOURCE
-
-    Please refer to  for 
-    instructions on obtaining and compiling the source.
-
-
-UNINSTALL
-
-    If you installed from a package, use your package manager to remove
-    SpaceFM.  Or, use the installer to uninstall:
-
-        spacefm-installer --uninstall
-
-    Otherwise, run these commands AS ROOT:
-
-        rm /usr/bin/spacefm /usr/bin/spacefm-auth /usr/bin/spacefm-installer
-        rm -r /usr/share/spacefm     # this may remove SpaceFM plugins
-        rm /usr/share/pixmaps/spacefm.png
-        rm /usr/share/pixmaps/spacefm-*.png
-        rm /usr/share/icons/hicolor/*/apps/spacefm.png
-        rm /usr/share/icons/hicolor/*/apps/spacefm-*.png
-        rm /usr/share/icons/Faenza/apps/48/spacefm.png
-        rm /usr/share/icons/Faenza/apps/48/spacefm-*.png
-        rm /usr/share/*/LC_MESSAGES/spacefm.mo
-        rm /usr/share/applications/spacefm*.desktop
-        rm /usr/share/mime/packages/spacefm-mime.xml
-        update-mime-database /usr/share/mime > /dev/null
-        update-desktop-database -q
-        gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor
-
+        
 
 LICENSE
     SpaceFM-NG - Copyright (C) 2017 Teklad GPL3+
