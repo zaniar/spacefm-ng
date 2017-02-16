@@ -12,12 +12,14 @@ DESCRIPTION
     manager with significant customisation capabilities.
     
     This is a derivative work from http://github.com/IgnorantGuru/spacefm/.
-    Due to low maintainer activity, this fork was created in order to keep Spacefm development going.
+    Due to low maintainer activity, this fork was created in order to keep 
+    SpaceFM development going.
 
     Most of the information that was in the README has been moved to:
     https://github.com/Teklad/spacefm-ng/wiki
     
     Some useful links:
+    
     * Building the Source:
         https://github.com/Teklad/spacefm-ng/wiki/building-the-source
     * Bug Reporting:
