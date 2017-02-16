@@ -22,9 +22,12 @@ DESCRIPTION
     and bash integration. SpaceFM aims to provide a stable, capable file
     manager with significant customisation capabilities.
 
+
 BUILDING THE SOURCE
-Please refer to https://github.com/Teklad/spacefm-ng/wiki/building-the-source for instructions on obtaining
-and compiling the source.
+
+    Please refer to https://github.com/Teklad/spacefm-ng/wiki/building-the-source for instructions on obtaining
+    and compiling the source.
+
 
 BUILD DEBUG
 
