@@ -1,14 +1,16 @@
+1.0.7-b 2017-02-16:
+    [SpaceFM-Installer] Update to use autogen.sh and point to new repository.
 1.0.6   2017-02-16:
     [General] Rename dlg canonicalize Copy Target/Link Target target when possible
     [installer] fix mktemp template and error handling for busybox #629
     [GTK2] fix black background dir load regression 888a7735 #578 #627
     [GTK3.20] fix theme parse warnings re close btn css #636
-	[General] Merge changes from "next" branch into master.
-	[VFS-Desktop] Use full icon name if removing the suffix causes issues. #647
-	[SpaceFM-Desktop] Prevent crash when placing an icon from a folder in the bottom-right corner of the desktop. #654
-	[VFS-General] Add support for btrfs-clone (szekelyszilv).
-	[GTK3.20] Partially fix having to click icons twice to drag on desktop.
-	[SpaceFM-Desktop] Paint the RootWindow background color. #408
+    [General] Merge changes from "next" branch into master.
+    [VFS-Desktop] Use full icon name if removing the suffix causes issues. #647
+    [SpaceFM-Desktop] Prevent crash when placing an icon from a folder in the bottom-right corner of the desktop. #654
+    [VFS-General] Add support for btrfs-clone (szekelyszilv).
+    [GTK3.20] Partially fix having to click icons twice to drag on desktop.
+    [SpaceFM-Desktop] Paint the RootWindow background color. #408
 1.0.5   2016-01-20:
     recreate too small cached thumbnails #584
     read $XDG_TEMPLATES_DIR via glib for user-dirs.dirs support #581
@@ -721,13 +723,13 @@
     corrected segfault in devices list when changing settings with no devices
         shown (ptk-location-view.c)
     corrected gentoo make error? (ptk-file-task.h:17:29: error: redefinition
-	of typedef PtkFileTask)
+    of typedef PtkFileTask)
     corrected ./configure --help output not up to date
     removed 'udisks not installed' warning on startup
 0.5.1   2012-01-14:
     corrected syntax error in Arch Linux PKGBUILD creation
     corrected problem in settings.c which caused reported make error on
-	unidentified distro
+    unidentified distro
     corrected deb pkg conflict with pcmanfm-mod - rename file libmimetype.xml
 0.5.0   2012-01-13:
     initial test release

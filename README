@@ -46,7 +46,7 @@ INSTALLER
     wget https://raw.github.com/IgnorantGuru/spacefm/next/spacefm-installer
     # OR using curl:
     curl -L -o spacefm-installer \
-            https://raw.github.com/IgnorantGuru/spacefm/next/spacefm-installer
+            https://raw.github.com/Teklad/spacefm-ng/master/spacefm-installer
 
     To run the installer (MUST be run in a terminal):
 
