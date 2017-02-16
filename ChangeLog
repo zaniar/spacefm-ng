@@ -5,6 +5,7 @@
     [GTK3.20] fix theme parse warnings re close btn css #636
 	[General] Merge changes from "next" branch into master.
 	[VFS-Desktop] Use full icon name if removing the suffix causes issues. #647
+	[SpaceFM-Desktop] Prevent crash when placing an icon from a folder in the bottom-right corner of the desktop. #654
 1.0.5   2016-01-20:
     recreate too small cached thumbnails #584
     read $XDG_TEMPLATES_DIR via glib for user-dirs.dirs support #581
