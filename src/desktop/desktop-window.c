@@ -818,7 +818,15 @@ void desktop_window_set_background( DesktopWindow* win, GdkPixbuf* src_pix, DWBg
         }
         else
         {
-            /* FIXME: Anyone knows how to handle this correctly??? */
+            XColor col;
+            col.flags = DoRed | DoGreen | DoBlue;
+            col.red = (unsigned short)win->bg.red;
+            col.green = (unsigned short)win->bg.green;
+            col.blue = (unsigned short)win->bg.blue;
+            if(XAllocColor(xdisplay, DefaultColormap(xdisplay, DefaultScreen(xdisplay)), &col) == 0) {
+                puts("XAllocColor failed.");
+            }
+            XSetWindowBackground(xdisplay, xroot, col.pixel);
         }
         XClearWindow( xdisplay, xroot );
 
