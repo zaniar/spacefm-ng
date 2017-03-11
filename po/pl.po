@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: spacefm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-01 08:20+0100\n"
-"PO-Revision-Date: 2017-03-11 10:41+0100\n"
+"PO-Revision-Date: 2017-03-11 11:33+0100\n"
 "Last-Translator: grimi <grimi at poczta dot fm>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/spacefm/language/"
 "pl/)\n"
@@ -457,7 +457,7 @@ msgstr "Przesuń (Shift+Przeciągnij)"
 
 #: ../data/ui/prefdlg.ui.h:12 ../data/ui/prefdlg2.ui.h:12
 msgid "Link (Ctrl+Shift+Drag)"
-msgstr "Odnośnik (Ctrl + Shift + Przeciągnij)"
+msgstr "Dowiązanie (Ctrl + Shift + przeciągnij)"
 
 #: ../data/ui/prefdlg.ui.h:13 ../data/ui/prefdlg2.ui.h:13
 msgid "Preferences"
@@ -6328,7 +6328,7 @@ msgstr "U_twórz "
 #: ../src/ptk/ptk-file-misc.c:1224
 msgctxt "Title|"
 msgid "Create New"
-msgstr "Utwórz nowy"
+msgstr "Utwórz"
 
 #: ../src/ptk/ptk-file-misc.c:1226
 msgctxt "Title|CreateNew|"
@@ -6458,7 +6458,7 @@ msgstr "Kat_alog"
 #: ../src/ptk/ptk-file-misc.c:2515
 msgctxt "New|Radio"
 msgid "_Link"
-msgstr "_Link"
+msgstr "_Dowiązanie"
 
 #: ../src/ptk/ptk-file-misc.c:2618
 msgid "New"
@@ -6470,7 +6470,7 @@ msgstr ""
 
 #: ../src/ptk/ptk-file-misc.c:2816
 msgid "Create Parent Folder"
-msgstr "Utwórz folder nadrzędny"
+msgstr "Utwórz katalog nadrzędny"
 
 #: ../src/ptk/ptk-file-misc.c:2818
 msgid "The parent folder does not exist.  Create it?"
