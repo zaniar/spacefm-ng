@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: spacefm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-01 08:20+0100\n"
-"PO-Revision-Date: 2017-03-11 11:33+0100\n"
+"PO-Revision-Date: 2017-03-11 19:23+0100\n"
 "Last-Translator: grimi <grimi at poczta dot fm>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/spacefm/language/"
 "pl/)\n"
@@ -2045,7 +2045,7 @@ msgstr "dowiązywanie"
 
 #: ../src/main-window.c:5856
 msgid "changing"
-msgstr ""
+msgstr "zmieniam"
 
 #: ../src/main-window.c:5857
 msgid "running"
@@ -3935,7 +3935,7 @@ msgstr "_Okno"
 #: ../src/settings.c:11413
 msgctxt "View|Events|Window|"
 msgid "_New"
-msgstr "_Nowy"
+msgstr "_Nowe"
 
 #: ../src/settings.c:11415
 msgid "Set New Window Command"
@@ -4181,7 +4181,7 @@ msgstr "_Karta"
 #: ../src/settings.c:11477
 msgctxt "View|Events|Tab|"
 msgid "_New"
-msgstr "_Nowy"
+msgstr "_Nowa"
 
 #: ../src/settings.c:11479
 msgid "Set New Tab Command"
@@ -4576,7 +4576,7 @@ msgstr "_Wstrzymaj przy błędzie"
 
 #: ../src/settings.c:11887
 msgid "Arrange _Icons"
-msgstr ""
+msgstr "Uporządkuj _ikony"
 
 #: ../src/settings.c:11892
 msgid "By _Name"
@@ -5718,7 +5718,7 @@ msgstr "Dowiązywanie..."
 
 #: ../src/ptk/ptk-file-task.c:813
 msgid "Changing..."
-msgstr ""
+msgstr "Zmieniam..."
 
 #: ../src/ptk/ptk-file-task.c:814 ../src/ptk/ptk-file-task.c:984
 #: ../src/ptk/ptk-file-task.c:1502
@@ -6292,7 +6292,7 @@ msgstr "_Przenieś"
 
 #: ../src/ptk/ptk-file-misc.c:861
 msgid "Select Link Target"
-msgstr ""
+msgstr "Wybierz cel dowiązania"
 
 #: ../src/ptk/ptk-file-misc.c:877
 msgid "Select Template File"
@@ -7858,7 +7858,7 @@ msgstr "Cele:  (lista ścieżek lub adresów URL rozdzielonych średnikiem)"
 
 #: ../src/item-prop.c:1110
 msgid "Target:  (a .desktop or executable file)"
-msgstr ""
+msgstr "Cel:  (.desktop lub plik wykonywalny)"
 
 #: ../src/item-prop.c:1269
 msgid "Choose Executable"
