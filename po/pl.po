@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: spacefm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-01 08:20+0100\n"
-"PO-Revision-Date: 2017-03-11 10:05+0100\n"
+"PO-Revision-Date: 2017-03-11 10:41+0100\n"
 "Last-Translator: grimi <grimi at poczta dot fm>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/spacefm/language/"
 "pl/)\n"
@@ -4816,7 +4816,7 @@ msgstr "_Pasek ścieżki"
 
 #: ../src/settings.c:12149
 msgid "_File List"
-msgstr "<b>Lista plików</b>"
+msgstr "_Liste plików"
 
 #: ../src/settings.c:12151
 msgid "_Tree"
