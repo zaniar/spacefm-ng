@@ -15,3 +15,15 @@ src/*/.dirstamp
 src/spacefm
 src/xml-purge
 *.o
+Makefile.in
+aclocal.m4
+compile
+configure
+data/Makefile.in
+depcomp
+etc/Makefile.in
+ltmain.sh
+missing
+po/Makefile.in.in
+src/Makefile.in
+
