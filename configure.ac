@@ -1,6 +1,6 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT([spacefm], [1.0.5+alpha])
+AC_INIT([spacefm], [1.0.6+alpha])
 AC_CONFIG_SRCDIR([src/main.c])
 AM_INIT_AUTOMAKE([dist-bzip2] [subdir-objects])
 AM_MAINTAINER_MODE
@@ -273,6 +273,18 @@ AC_ARG_ENABLE(
     use_pixmaps=$enableval, use_pixmaps="no")
 AM_CONDITIONAL(NO_PIXMAPS, test ! x"$use_pixmaps" = x"yes")
 
+AC_ARG_ENABLE(
+    [btrfs-clone],
+    AS_HELP_STRING([--disable-btrfs-clone],
+        [try to use btrfs clone ioctl to copy files (default: enable if installed)]),
+    use_btrfs_clone=$enableval, use_btrfs_clone="yes")
+if test x"$use_btrfs_clone" = x"yes"; then
+  AC_CHECK_HEADERS([sys/ioctl.h btrfs/ioctl.h], use_btrfs_clone="yes", use_btrfs_clone="no")
+  if test x"$use_btrfs_clone" = x"yes"; then
+    AC_DEFINE(HAVE_BTRFS_CLONE, 1, [Use Btrfs clone])
+  fi
+fi
+
 dnl advanced compiler tweaking
 CPPFLAGS="$CPPFLAGS -fstrict-aliasing -fmessage-length=0"
 
@@ -355,6 +367,7 @@ fi
 echo Desktop manager integration.................. : $desktop_integration
 echo Startup notification......................... : $use_sn
 echo Video thumbnail support...................... : $video_thumbnails
+echo Btrfs clone support.......................... : $use_btrfs_clone
 echo
 echo 'Homepage: http://ignorantguru.github.io/spacefm/'
 echo

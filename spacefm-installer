@@ -2,16 +2,16 @@
 # spacefm-installer - http://ignorantguru.github.io/spacefm/#installer
 # License: GNU GENERAL PUBLIC LICENSE Version 3 http://www.gnu.org/licenses/gpl-3.0.txt
 
-default_branch='next'
+default_branch='master'
 # If wget and curl are installed, used to download
-tarball_url='https://github.com/IgnorantGuru/spacefm/archive/'
+tarball_url='https://github.com/Teklad/spacefm-ng/archive/'
 curl_options="-L -#"
 # Note: older wget versions don't support --show-progress option
 #wget_options="--no-verbose --show-progress"
 wget_options=""
 # If wget and curl are not installed, git is used to download
-git_root='git://github.com/IgnorantGuru/spacefm.git'
-git_name='spacefm'
+git_root='git://github.com/Teklad/spacefm-ng.git'
+git_name='spacefm-ng'
 
 help ()
 {
@@ -280,7 +280,7 @@ if [ -n "$branch" ] || [ ! -e configure ]; then
             echo ">>> cd $srcdir"
             cd "$srcdir"
         fi
-        if [ $? -ne 0 ] || [ -z "$srcdir" ] || [ ! -e "configure" ]; then
+        if [ $? -ne 0 ] || [ -z "$srcdir" ] || [ ! -e "autogen.sh" ]; then
             echo "spacefm-installer: Required files missing from downloaded archive - download may be corrupt" 1>&2
             if [ -n "$tdir" ]; then
                 rm -rf "$tdir"
@@ -405,8 +405,8 @@ while true; do
         echo ">>> CFLAGS='-ggdb3' STRIP='!strip' ./configure${configure_options}"
         CFLAGS='-ggdb3' STRIP='!strip' ./configure${configure_options}
     else
-        echo ">>> ./configure${configure_options}"
-        ./configure${configure_options}
+        echo ">>> ./autogen.sh${configure_options}"
+        ./autogen.sh${configure_options}
     fi
     if [ $? -ne 0 ]; then
         echo

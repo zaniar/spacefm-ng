@@ -850,24 +850,30 @@ gboolean on_dir_tree_view_drag_motion ( GtkWidget *widget,
         }
 #if GTK_CHECK_VERSION (3, 0, 0)
         /* hack to be able to call the default handler with the correct suggested_action */
-        struct _GdkDragContext {
-          GObject parent_instance;
+    struct _GdkDragContext {
+        GObject parent_instance;
 
-          /*< private >*/
-          GdkDragProtocol protocol;
+        /*< private >*/
+        GdkDragProtocol protocol;
+#if GTK_CHECK_VERSION (3,22,0)
+        GdkDisplay *display;
+#endif
+        gboolean is_source;
+        GdkWindow *source_window;
+        GdkWindow *dest_window;
+        GdkWindow *drag_window;
 
-          gboolean is_source;
-          GdkWindow *source_window;
-          GdkWindow *dest_window;
+        GList *targets;
+        GdkDragAction actions;
+        GdkDragAction suggested_action;
+        GdkDragAction action;
 
-          GList *targets;
-          GdkDragAction actions;
-          GdkDragAction suggested_action;
-          GdkDragAction action;
+        guint32 start_time;
 
-          guint32 start_time;
-
-          GdkDevice *device;
+        GdkDevice *device;
+#if GTK_CHECK_VERSION (3,22,0)
+        guint drop_done : 1; /* Whether gdk_drag_drop_done() was performed */
+#endif
         };
         ((struct _GdkDragContext *)drag_context)->suggested_action = suggested_action;
 #else
