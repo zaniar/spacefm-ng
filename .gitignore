@@ -26,4 +26,7 @@ ltmain.sh
 missing
 po/Makefile.in.in
 src/Makefile.in
+intltool-extract.in
+intltool-merge.in
+intltool-update.in
 
