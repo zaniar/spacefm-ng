@@ -86,6 +86,11 @@ test -n "$NO_AUTOMAKE" || (aclocal --version) < /dev/null > /dev/null 2>&1 || {
   DIE=1
 }
 
+which "pkg-config" 2>/dev/null || {
+    echo "**Error**: You must have \`pkg-config' installed."
+    DIE=1
+}
+
 if test "$DIE" -eq 1; then
   exit 1
 fi
