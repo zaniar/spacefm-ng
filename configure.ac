@@ -256,9 +256,8 @@ AM_CONDITIONAL(DESKTOP_INTEGRATION, test "$desktop_integration" = "yes")
 
 AC_ARG_ENABLE(
     [video-thumbnails],
-    AS_HELP_STRING([--disable-video-thumbnails],
-                   [disable libffmpegthumbnailer video thumbnails (default: enable)]))
-AS_IF([test "x$video_thumbnails" != "xno"], [
+    AS_HELP_STRING([--disable-video-thumbnails], [Disable ffmpegthumbnailer video thumbnails (Default: enable)]))
+AS_IF([test "x$enable_video_thumbnails" != "xno"], [
     PKG_CHECK_MODULES( FFMPEG, libffmpegthumbnailer, HAVE_FFMPEG=yes)
     AC_SUBST(FFMPEG_CFLAGS)
     AC_SUBST(FFMPEG_LIBS)
